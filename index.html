@@ -1,0 +1,680 @@
+<html><head><base href="https://dx-education.kawagoehigashi.edu/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>川越市立大東中学校 - DX教育の取り組み</title><style>
+body {
+    font-family: 'Mochiy Pop One', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    background-color: #f0e6ff;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    background-color: #7560d1;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.subtitle {
+    font-size: 2.5em;
+    color: #d2b4de;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.category {
+    flex-basis: calc(33.33% - 20px);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(143, 140, 140, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(161, 159, 159, 0.15);
+}
+.category h2 {
+    color: #33723e;
+    border-bottom: 3px solid #abecec;
+    padding-bottom: 10px;
+}
+.practice {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #d5caf5;
+}
+.pdf-link {
+    display: inline-block;
+    background-color: #f5e3e7;
+    color: #eb4592;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 5px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+.pdf-link:hover {
+    background-color: #ffb6c1;
+    transform: scale(1.05);
+}
+.pdf-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.pdf-item {
+    flex-basis: 30%;
+    background-color: #b3f8d8;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.pdf-item .file-label {
+    display: block;
+    margin-bottom: 5px;
+}
+.pdf-item .pdf-link {
+    margin-top: 5px;
+}
+.subject-pdfs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+.subject-group {
+    flex-basis: calc(50% - 5px);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.subject-group .file-label {
+    flex-grow: 1;
+    margin-right: 5px;
+}
+.subject-group .pdf-link {
+    font-size: 0.8em;
+    padding: 2px 6px;
+}
+.file-input {
+    display: none;
+}
+.file-label {
+    display: inline-block;
+    background-color: #42bdd3;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+.file-label:hover {
+    background-color: #9ff3bb;
+    transform: scale(1.05);
+}
+.file-name {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #ec40d5;
+}
+.subject-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.subject-group .file-label {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+.subject-group .pdf-link {
+    font-size: 0.8em;
+    padding: 2px 6px;
+}
+</style></head><body>
+<div class="container">
+    <header>
+        <h1>川越市立大東中学校</h1>
+        <div class="subtitle">DX教育の取り組み</div>
+    </header>
+
+    <div class="content">
+        <div class="category" style="background-color: #e9ffe6;">
+            <h2>個に応じた指導</h2>
+            <div class="pdf-section">
+                <div class="pdf-item">
+                    <label for="file-1-1" class="file-label">PDF添付 1</label>
+                    <input type="file" id="file-1-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-1-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-1-1')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-1-2" class="file-label">PDF添付 2</label>
+                    <input type="file" id="file-1-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-1-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-1-2')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-1-3" class="file-label">PDF添付 3</label>
+                    <input type="file" id="file-1-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-1-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-1-3')">閲覧</button>
+                </div>
+            </div>
+            <div class="practice">
+                <h3>AIを活用した学習進度管理</h3>
+                <p>生徒一人ひとりの学習データを分析し、個別最適化された学習プランを提供</p>
+            </div>
+            <div class="subject-pdfs">
+                <h3>教科別実践例PDF</h3>
+                <div class="subject-group">
+                    <label for="file-math-1" class="file-label">数学科</label>
+                    <input type="file" id="file-math-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-math-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-math-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-japanese-1" class="file-label">国語科</label>
+                    <input type="file" id="file-japanese-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-japanese-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-japanese-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-english-1" class="file-label">英語科</label>
+                    <input type="file" id="file-english-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-english-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-english-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-science-1" class="file-label">理科</label>
+                    <input type="file" id="file-science-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-science-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-science-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-social-1" class="file-label">社会科</label>
+                    <input type="file" id="file-social-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-social-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-social-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-pe-1" class="file-label">体育科</label>
+                    <input type="file" id="file-pe-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-pe-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-pe-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-music-1" class="file-label">音楽科</label>
+                    <input type="file" id="file-music-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-music-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-music-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-home-1" class="file-label">家庭科</label>
+                    <input type="file" id="file-home-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-home-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-home-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-tech-1" class="file-label">技術科</label>
+                    <input type="file" id="file-tech-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-tech-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-tech-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-art-1" class="file-label">美術科</label>
+                    <input type="file" id="file-art-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-art-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-art-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-integrated-1" class="file-label">総合</label>
+                    <input type="file" id="file-integrated-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-integrated-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-integrated-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-homeroom-1" class="file-label">学活</label>
+                    <input type="file" id="file-homeroom-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-homeroom-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-homeroom-1')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-moral-1" class="file-label">道徳</label>
+                    <input type="file" id="file-moral-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-moral-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-moral-1')">閲覧</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" style="background-color: #e6f3ff;">
+            <h2>協働学習の促進</h2>
+            <div class="pdf-section">
+                <div class="pdf-item">
+                    <label for="file-2-1" class="file-label">PDF添付 1</label>
+                    <input type="file" id="file-2-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-2-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-2-1')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-2-2" class="file-label">PDF添付 2</label>
+                    <input type="file" id="file-2-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-2-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-2-2')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-2-3" class="file-label">PDF添付 3</label>
+                    <input type="file" id="file-2-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-2-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-2-3')">閲覧</button>
+                </div>
+            </div>
+            <div class="practice">
+                <h3>オンラインプロジェクト学習</h3>
+                <p>クラウドツールを活用し、生徒間のリアルタイムコラボレーションを実現</p>
+            </div>
+            <div class="subject-pdfs">
+                <h3>教科別実践例PDF</h3>
+                <div class="subject-group">
+                    <label for="file-math-2" class="file-label">数学科</label>
+                    <input type="file" id="file-math-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-math-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-math-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-japanese-2" class="file-label">国語科</label>
+                    <input type="file" id="file-japanese-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-japanese-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-japanese-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-english-2" class="file-label">英語科</label>
+                    <input type="file" id="file-english-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-english-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-english-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-science-2" class="file-label">理科</label>
+                    <input type="file" id="file-science-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-science-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-science-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-social-2" class="file-label">社会科</label>
+                    <input type="file" id="file-social-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-social-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-social-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-pe-2" class="file-label">体育科</label>
+                    <input type="file" id="file-pe-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-pe-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-pe-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-music-2" class="file-label">音楽科</label>
+                    <input type="file" id="file-music-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-music-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-music-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-home-2" class="file-label">家庭科</label>
+                    <input type="file" id="file-home-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-home-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-home-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-tech-2" class="file-label">技術科</label>
+                    <input type="file" id="file-tech-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-tech-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-tech-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-art-2" class="file-label">美術科</label>
+                    <input type="file" id="file-art-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-art-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-art-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-integrated-2" class="file-label">総合</label>
+                    <input type="file" id="file-integrated-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-integrated-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-integrated-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-homeroom-2" class="file-label">学活</label>
+                    <input type="file" id="file-homeroom-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-homeroom-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-homeroom-2')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-moral-2" class="file-label">道徳</label>
+                    <input type="file" id="file-moral-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-moral-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-moral-2')">閲覧</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" style="background-color: #faf2f4;">
+            <h2>デジタル教材の活用</h2>
+            <div class="pdf-section">
+                <div class="pdf-item">
+                    <label for="file-3-1" class="file-label">PDF添付 1</label>
+                    <input type="file" id="file-3-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-3-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-3-1')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-3-2" class="file-label">PDF添付 2</label>
+                    <input type="file" id="file-3-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-3-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-3-2')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-3-3" class="file-label">PDF添付 3</label>
+                    <input type="file" id="file-3-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-3-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-3-3')">閲覧</button>
+                </div>
+            </div>
+            <div class="practice">
+                <h3>インタラクティブな教材開発</h3>
+                <p>ARやVRを活用し、生徒の興味を引き出す没入型学習体験を提供</p>
+            </div>
+            <div class="subject-pdfs">
+                <h3>教科別実践例PDF</h3>
+                <div class="subject-group">
+                    <label for="file-math-3" class="file-label">数学科</label>
+                    <input type="file" id="file-math-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-math-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-math-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-japanese-3" class="file-label">国語科</label>
+                    <input type="file" id="file-japanese-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-japanese-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-japanese-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-english-3" class="file-label">英語科</label>
+                    <input type="file" id="file-english-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-english-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-english-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-science-3" class="file-label">理科</label>
+                    <input type="file" id="file-science-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-science-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-science-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-social-3" class="file-label">社会科</label>
+                    <input type="file" id="file-social-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-social-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-social-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-pe-3" class="file-label">体育科</label>
+                    <input type="file" id="file-pe-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-pe-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-pe-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-music-3" class="file-label">音楽科</label>
+                    <input type="file" id="file-music-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-music-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-music-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-home-3" class="file-label">家庭科</label>
+                    <input type="file" id="file-home-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-home-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-home-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-tech-3" class="file-label">技術科</label>
+                    <input type="file" id="file-tech-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-tech-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-tech-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-art-3" class="file-label">美術科</label>
+                    <input type="file" id="file-art-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-art-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-art-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-integrated-3" class="file-label">総合</label>
+                    <input type="file" id="file-integrated-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-integrated-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-integrated-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-homeroom-3" class="file-label">学活</label>
+                    <input type="file" id="file-homeroom-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-homeroom-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-homeroom-3')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-moral-3" class="file-label">道徳</label>
+                    <input type="file" id="file-moral-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-moral-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-moral-3')">閲覧</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" style="background-color: #ffffe6;">
+            <h2>ICT活用スキル向上</h2>
+            <div class="pdf-section">
+                <div class="pdf-item">
+                    <label for="file-4-1" class="file-label">PDF添付 1</label>
+                    <input type="file" id="file-4-1" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-4-1"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-4-1')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-4-2" class="file-label">PDF添付 2</label>
+                    <input type="file" id="file-4-2" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-4-2"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-4-2')">閲覧</button>
+                </div>
+                <div class="pdf-item">
+                    <label for="file-4-3" class="file-label">PDF添付 3</label>
+                    <input type="file" id="file-4-3" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-4-3"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-4-3')">閲覧</button>
+                </div>
+            </div>
+            <div class="practice">
+                <h3>デジタルリテラシー教育</h3>
+                <p>情報モラルと技術を学び、21世紀型スキルを育成</p>
+            </div>
+            <div class="subject-pdfs">
+                <h3>教科別実践例PDF</h3>
+                <div class="subject-group">
+                    <label for="file-math-4" class="file-label">数学科</label>
+                    <input type="file" id="file-math-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-math-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-math-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-japanese-4" class="file-label">国語科</label>
+                    <input type="file" id="file-japanese-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-japanese-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-japanese-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-english-4" class="file-label">英語科</label>
+                    <input type="file" id="file-english-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-english-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-english-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-science-4" class="file-label">理科</label>
+                    <input type="file" id="file-science-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-science-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-science-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-social-4" class="file-label">社会科</label>
+                    <input type="file" id="file-social-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-social-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-social-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-pe-4" class="file-label">体育科</label>
+                    <input type="file" id="file-pe-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-pe-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-pe-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-music-4" class="file-label">音楽科</label>
+                    <input type="file" id="file-music-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-music-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-music-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-home-4" class="file-label">家庭科</label>
+                    <input type="file" id="file-home-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-home-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-home-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-tech-4" class="file-label">技術科</label>
+                    <input type="file" id="file-tech-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-tech-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-tech-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-art-4" class="file-label">美術科</label>
+                    <input type="file" id="file-art-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-art-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-art-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-integrated-4" class="file-label">総合</label>
+                    <input type="file" id="file-integrated-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-integrated-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-integrated-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-homeroom-4" class="file-label">学活</label>
+                    <input type="file" id="file-homeroom-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-homeroom-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-homeroom-4')">閲覧</button>
+                </div>
+                <div class="subject-group">
+                    <label for="file-moral-4" class="file-label">道徳</label>
+                    <input type="file" id="file-moral-4" class="file-input" accept=".pdf">
+                    <span class="file-name" id="file-name-moral-4"></span>
+                    <button class="pdf-link" onclick="viewPDF('file-moral-4')">閲覧</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function updatePDFButton(fileInputId) {
+    const fileInput = document.getElementById(fileInputId);
+    const pdfButton = document.querySelector(`button[onclick="viewPDF('${fileInputId}')"]`);
+    if (fileInput.files.length > 0) {
+        pdfButton.style.backgroundColor = '#8e44ad';
+        pdfButton.style.color = '#ffffff';
+    } else {
+        pdfButton.style.backgroundColor = '#ffd1dc';
+        pdfButton.style.color = '#6c3483';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const categories = document.querySelectorAll('.category');
+    const pastelColors = {
+        'pastel-purple': '#e6e6fa',
+        'pastel-blue': '#e6f3ff',
+        'pastel-green': '#e6ffe6',
+        'pastel-yellow': '#ffffe6'
+    };
+
+    categories.forEach((category, index) => {
+        const colors = Object.values(pastelColors);
+        category.style.backgroundColor = colors[index % colors.length];
+        
+        category.addEventListener('click', () => {
+            changeColor(category);
+        });
+        
+        setTimeout(() => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(20px)';
+            category.style.transition = 'opacity 0.5s, transform 0.5s';
+            requestAnimationFrame(() => {
+                category.style.opacity = '1';
+                category.style.transform = 'translateY(0)';
+            });
+        }, index * 200);
+    });
+
+    const fileInputs = document.querySelectorAll('.file-input');
+    fileInputs.forEach(input => {
+        input.addEventListener('change', (e) => {
+            const fileName = e.target.files[0].name;
+            const fileNameSpan = document.getElementById(`file-name-${e.target.id}`);
+            fileNameSpan.textContent = fileName;
+            updatePDFButton(e.target.id);
+        });
+    });
+
+    const fileLabels = document.querySelectorAll('.file-label');
+    fileLabels.forEach(label => {
+        label.addEventListener('mouseover', () => {
+            label.style.transform = 'scale(1.1)';
+            label.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+        });
+        label.addEventListener('mouseout', () => {
+            label.style.transform = 'scale(1)';
+            label.style.boxShadow = 'none';
+        });
+    });
+});
+
+function changeColor(category) {
+    const pastelColors = {
+        'pastel-purple': '#e6e6fa',
+        'pastel-blue': '#e6f3ff',
+        'pastel-green': '#e6ffe6',
+        'pastel-yellow': '#ffffe6'
+    };
+    const colors = Object.values(pastelColors);
+    const currentColor = category.style.backgroundColor;
+    const currentIndex = colors.indexOf(currentColor);
+    const nextIndex = (currentIndex + 1) % colors.length;
+    category.style.backgroundColor = colors[nextIndex];
+}
+
+function viewPDF(fileInputId)
